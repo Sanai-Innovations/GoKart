@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">GoKart</string>
+
+    <!-- Splash screen -->
+    <string name="app_first_name">Go</string>
+    <string name="app_last_name">Kart</string>
+    <string name="subtitle">Begin your round</string>
+
+
+
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_education">EducationActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

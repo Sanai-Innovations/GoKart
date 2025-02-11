@@ -10,6 +10,9 @@ plugins {
 
     // safe args for kotlin only modules
     id("androidx.navigation.safeargs.kotlin")
+    
+    // to add parcelize
+    id("kotlin-parcelize")
 
     // Kotlin serialization plugin for type safe routes and navigation arguments
     kotlin("plugin.serialization") version "2.0.21"
@@ -74,6 +77,7 @@ dependencies {
 
     // Dagger
     implementation(libs.dagger)
+    implementation(libs.androidx.navigation.ui.ktx)
     ksp(libs.dagger.compiler)
 
     // hilt
