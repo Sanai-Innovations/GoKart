@@ -14,14 +14,6 @@
         android:theme="@style/Theme.GoKart"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.activities.home.HomeActivity"
-            android:exported="false"
-            android:label="@string/title_activity_home" />
-        <activity
-            android:name=".presentation.activities.education.EducationActivity"
-            android:exported="false"
-            android:label="@string/title_activity_education" />
-        <activity
             android:name=".presentation.activities.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -30,6 +22,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".presentation.activities.education.EducationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_education" />
+        <activity
+            android:name=".presentation.activities.register.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.activities.login.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.activities.home.HomeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_home" />
     </application>
-
 </manifest>

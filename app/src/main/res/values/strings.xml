@@ -7,10 +7,56 @@
     <string name="subtitle">Begin your round</string>
 
 
+    <!-- Login screen -->
+    <string name="btn_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="lbl_do_not_have_account">"Don't have the account?"</string>
+    <string name="lbl_login_as_guest">"Don't have the account?"</string>
+    <string name="lbl_guest_login">Guest login</string>
+    <string name="lbl_or">Or</string>
+    <string name="lbl_register_yourself">You don\'t have the valid account. Kindly register yourself.</string>
+
+    <!--Register screen -->
+    <string name="title_create_account">Create account</string>
+    <string name="lbl_first_name">First name</string>
+    <string name="lbl_last_name">Last name</string>
+    <string name="lbl_password">Password</string>
+    <string name="lbl_email">Email</string>
+    <string name="lbl_phone_number">Phone number</string>
+    <string name="lbl_terms_conditions">I agree to terms and conditions</string>
+    <string name="lbl_register">Register</string>
+    <string name="lbl_choose_gender">Choose gender</string>
+    <string name="lbl_already_account">Already have an account?</string>
+    <string name="lbl_login">Login</string>
+    <string name="lbl_error_register">Some of the values are not input correctly</string>
+    <string name="lbl_success_register">Successfully registered, kindly login</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_cart">Cart</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_more">More</string>
+
+    <string name="title_activity_product_detail">ProductDetailActivity</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <!-- Home screen -->
+    <string name="search_hint">Search</string>
+    <string name="deals_of_the_day">Deals of the day</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_activity_education">EducationActivity</string>
-    <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 </resources>
