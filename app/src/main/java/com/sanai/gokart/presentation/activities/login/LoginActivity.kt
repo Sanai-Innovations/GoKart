@@ -19,9 +19,13 @@ import com.sanai.gokart.databinding.ActivityLoginBinding
 import com.sanai.gokart.presentation.activities.base.BaseActivity
 import com.sanai.gokart.presentation.activities.home.HomeActivity
 import com.sanai.gokart.presentation.activities.register.RegisterActivity
+import com.sanai.gokart.presentation.viewmodel.login.LoginViewModel
+import com.sanai.gokart.presentation.viewmodel.login.LoginViewModelFactory
 import com.vans.gokart.ui.login.LoggedInUserView
-import com.vans.gokart.ui.login.LoginViewModelFactory
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class LoginActivity : BaseActivity() {
 
     private lateinit var loginButton: Button
@@ -32,6 +36,9 @@ class LoginActivity : BaseActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var passwordNameEditText: EditText
     private lateinit var registerTextView: MaterialTextView
+
+    @Inject
+    lateinit var loginViewModelFactory: LoginViewModelFactory
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -83,18 +90,17 @@ class LoginActivity : BaseActivity() {
         passwordNameEditText = binding.password
         loginAsGuestButton = binding.loginAsGust
 
-        viewModel =
-            ViewModelProvider.create(this, LoginViewModelFactory())[LoginViewModel::class]
+        // view model
+        viewModel = ViewModelProvider.create(this, loginViewModelFactory)[LoginViewModel::class]
     }
 
     private fun setClickListeners() {
         loginButton.setOnClickListener {
-            //loadingBar.visibility = View.VISIBLE
-//            viewModel.login(
-//                userNameEditText.text.toString(), passwordNameEditText.text.toString()
-//            )
+            loadingBar.visibility = View.VISIBLE
+            viewModel.login(
+                userNameEditText.text.toString(), passwordNameEditText.text.toString()
+            )
             startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
-
         }
 
         registerTextView.setOnClickListener {

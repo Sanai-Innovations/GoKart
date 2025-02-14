@@ -5,23 +5,21 @@ package com.sanai.gokart.data.api.interceptor
 
 import android.text.TextUtils
 import com.sanai.gokart.BuildConfig
-import com.sanai.gokart.presentation.util.EMPTY_STRING
+import com.sanai.gokart.presentation.util.constants.Constants.EMPTY_STRING
 import okhttp3.Interceptor
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.Protocol
 import okhttp3.Request
 import okhttp3.Response
-import okhttp3.ResponseBody
+import okhttp3.ResponseBody.Companion.toResponseBody
 import java.io.IOException
 import java.io.UnsupportedEncodingException
 import java.net.URLDecoder
 import java.nio.charset.StandardCharsets
 import javax.inject.Inject
 
-class MockAPIInterceptor() : Interceptor {
-
-    @Inject
-    lateinit var mockResponseProvider: MockResponseProvider
+class MockAPIInterceptor @Inject constructor(private val mockResponseProvider: MockResponseProvider) :
+    Interceptor {
 
     @Throws(IOException::class)
     override fun intercept(chain: Interceptor.Chain): Response {
@@ -48,7 +46,7 @@ class MockAPIInterceptor() : Interceptor {
                 val jsonResponse = getJsonResponse(urlPath, param)
                 val type = EMPTY_STRING.toMediaTypeOrNull()
                 if (!TextUtils.isEmpty(jsonResponse)) {
-                    val body = ResponseBody.create(type, jsonResponse)
+                    val body = jsonResponse.toResponseBody(type)
                     response.body(body)
                     response.request(request)
                     response.protocol(Protocol.HTTP_1_0)
@@ -56,7 +54,7 @@ class MockAPIInterceptor() : Interceptor {
                     response.message("Success")
                     return response.build()
                 } else {
-                    val body = ResponseBody.create(type, "")
+                    val body = jsonResponse.toResponseBody(type)
                     response.body(body)
                     response.request(request)
                     response.protocol(Protocol.HTTP_1_0)

@@ -1,30 +1,28 @@
-/*
- * Copyright © 2017 Nedbank. All rights reserved.
- */
 package com.sanai.gokart.presentation.util.logging
 
 import android.util.Log
 import com.sanai.gokart.BuildConfig
+import com.sanai.gokart.presentation.util.constants.Constants
 
 object Logger {
-    fun d(tag: String, value: String) {
-        log(Log.DEBUG, tag, value, null)
+    fun d(value: String) {
+        log(Log.DEBUG, Constants.APP_TAG, value, null)
     }
 
-    fun e(tag: String, value: String) {
-        log(Log.ERROR, tag, value, null)
+    fun e(value: String) {
+        log(Log.ERROR, Constants.APP_TAG, value, null)
     }
 
-    fun e(tag: String, value: String, e: Throwable?) {
-        log(Log.ERROR, tag, value, e)
+    fun e(value: String, e: Throwable?) {
+        log(Log.ERROR, Constants.APP_TAG, value, e)
     }
 
-    fun i(tag: String, value: String) {
-        log(Log.INFO, tag, value, null)
+    fun i(value: String) {
+        log(Log.INFO, Constants.APP_TAG, value, null)
     }
 
-    fun i(tag: String, value: String, e: Throwable?) {
-        log(Log.INFO, tag, value, e)
+    fun i(value: String, e: Throwable?) {
+        log(Log.INFO, Constants.APP_TAG, value, e)
     }
 
     fun v(tag: String, value: String) {

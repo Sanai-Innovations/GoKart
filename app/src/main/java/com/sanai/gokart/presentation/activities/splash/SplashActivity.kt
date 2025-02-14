@@ -9,7 +9,7 @@ import com.sanai.gokart.databinding.ActivitySplashBinding
 import com.sanai.gokart.presentation.activities.base.BaseActivity
 import com.sanai.gokart.presentation.activities.education.EducationActivity
 import com.sanai.gokart.presentation.activities.home.HomeActivity
-import com.sanai.gokart.presentation.util.AppPreferences
+import com.sanai.gokart.presentation.util.prefs.AppPreferences
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

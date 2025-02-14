@@ -1,14 +1,14 @@
 package com.sanai.gokart.data.api.interceptor
 
-import android.content.Context
+import android.app.Application
 import android.text.TextUtils
-import com.sanai.gokart.presentation.util.EMPTY_STRING
+import com.sanai.gokart.presentation.util.constants.Constants.EMPTY_STRING
 import com.sanai.gokart.presentation.util.logging.Logger
 import java.io.IOException
 import java.io.UnsupportedEncodingException
 import javax.inject.Inject
 
-class MockResponseProvider @Inject constructor(private val context: Context) {
+class MockResponseProvider @Inject constructor(private val app: Application) {
 
     private val folderName = "response/"
     private val jsonExtension = ".json"
@@ -29,17 +29,17 @@ class MockResponseProvider @Inject constructor(private val context: Context) {
             var json: String
             val filePathAbsolute = folderName + filePath + jsonExtension
             try {
-                context.assets.open(filePathAbsolute).use { `is` ->
+                app.baseContext.assets.open(filePathAbsolute).use { `is` ->
                     val size = `is`.available()
                     val buffer = ByteArray(size)
                     `is`.read(buffer)
                     json = String(buffer, charset("UTF-8"))
                 }
             } catch (e: UnsupportedEncodingException) {
-                Logger.e("Exception:", "MockResponseProvider", e)
+                Logger.e("Exception: MockResponseProvider", e)
                 return EMPTY_STRING
             } catch (ex: IOException) {
-                Logger.e("Exception:", "MockResponseProvider", ex)
+                Logger.e("Exception: MockResponseProvider", ex)
                 return EMPTY_STRING
             }
             return json

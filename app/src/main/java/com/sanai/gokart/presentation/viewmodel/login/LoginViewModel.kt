@@ -1,13 +1,20 @@
-package com.sanai.gokart.presentation.activities.login
+package com.sanai.gokart.presentation.viewmodel.login
 
 import android.util.Patterns
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.sanai.gokart.R
+import com.sanai.gokart.data.models.request.LoginRequest
+import com.sanai.gokart.domain.usecase.LoginUserUseCase
+import com.sanai.gokart.presentation.activities.login.LoginResult
+import com.sanai.gokart.presentation.util.logging.Logger
 import com.vans.gokart.ui.login.LoginFormState
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
-class LoginViewModel() : ViewModel() {
+class LoginViewModel(private val loginUserUseCase: LoginUserUseCase) : ViewModel() {
 
     private val _loginForm = MutableLiveData<LoginFormState>()
     val loginFormState: LiveData<LoginFormState> = _loginForm
@@ -37,5 +44,17 @@ class LoginViewModel() : ViewModel() {
     // A placeholder password validation check
     private fun isPasswordValid(password: String): Boolean {
         return password.length > 5
+    }
+
+    fun login(username: String, password: String) {
+        Logger.d("LoginViewModel: Login with Username: $username and Password: $password")
+        val loginRequest = LoginRequest(username = username, password = password)
+        try {
+            viewModelScope.launch(Dispatchers.IO) {
+                val result = loginUserUseCase.execute(loginRequest)
+            }
+        } catch (e: Exception) {
+            Logger.e(e.message.toString())
+        }
     }
 }

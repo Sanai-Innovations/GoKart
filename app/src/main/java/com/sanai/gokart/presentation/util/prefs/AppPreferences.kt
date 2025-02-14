@@ -1,4 +1,4 @@
-package com.sanai.gokart.presentation.util
+package com.sanai.gokart.presentation.util.prefs
 
 import android.content.SharedPreferences
 import javax.inject.Inject

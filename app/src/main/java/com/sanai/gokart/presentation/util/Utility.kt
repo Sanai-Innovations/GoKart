@@ -1,4 +1,4 @@
-package com.sanai.newsapiclient.presentation.util
+package com.sanai.gokart.presentation.util
 
 import android.content.Context
 import android.net.ConnectivityManager
