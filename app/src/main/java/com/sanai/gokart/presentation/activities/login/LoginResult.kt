@@ -1,4 +1,6 @@
-package com.vans.gokart.ui.login
+package com.sanai.gokart.presentation.activities.login
+
+import com.vans.gokart.ui.login.LoggedInUserView
 
 /**
  * Authentication result : success (user details) or error message.

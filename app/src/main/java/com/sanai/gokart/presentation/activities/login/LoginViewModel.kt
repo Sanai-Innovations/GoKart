@@ -6,7 +6,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.sanai.gokart.R
 import com.vans.gokart.ui.login.LoginFormState
-import com.vans.gokart.ui.login.LoginResult
 
 class LoginViewModel() : ViewModel() {
 
