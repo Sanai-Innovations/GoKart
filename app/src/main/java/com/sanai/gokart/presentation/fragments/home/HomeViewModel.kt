@@ -1,4 +1,4 @@
-package com.sanai.gokart.presentation.activities.home.ui.home
+package com.sanai.gokart.presentation.fragments.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

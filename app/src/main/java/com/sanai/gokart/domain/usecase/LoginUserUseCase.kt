@@ -1,7 +1,7 @@
 package com.sanai.gokart.domain.usecase
 
 import com.sanai.gokart.data.models.request.LoginRequest
-import com.sanai.gokart.data.models.response.LoginResponse
+import com.sanai.gokart.data.models.response.login.LoginResponse
 import com.sanai.gokart.data.util.Resource
 import com.sanai.gokart.domain.repository.LoginRepository
 import com.sanai.gokart.presentation.util.logging.Logger

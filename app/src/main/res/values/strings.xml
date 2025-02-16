@@ -6,7 +6,6 @@
     <string name="app_last_name">Kart</string>
     <string name="subtitle">Begin your round</string>
 
-
     <!-- Login screen -->
     <string name="btn_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
@@ -35,16 +34,10 @@
     <string name="lbl_error_register">Some of the values are not input correctly</string>
     <string name="lbl_success_register">Successfully registered, kindly login</string>
 
-    <string name="title_home">Home</string>
-    <string name="title_cart">Cart</string>
-    <string name="title_profile">Profile</string>
-    <string name="title_more">More</string>
 
     <string name="title_activity_product_detail">ProductDetailActivity</string>
 
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
@@ -58,5 +51,21 @@
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_activity_education">EducationActivity</string>
     <string name="title_dashboard">Dashboard</string>
+
+    <!-- Bottom Navigation -->
+    <string name="title_home">Home</string>
+    <string name="title_account">Account</string>
+    <string name="title_cart">Cart</string>
     <string name="title_notifications">Notifications</string>
+    <string name="title_more">More</string>
+
+    <!-- Home -->
+
+    <!-- Account -->
+
+    <!-- Cart -->
+
+    <!-- Notifications -->
+
+    <!-- More -->
 </resources>

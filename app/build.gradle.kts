@@ -30,6 +30,7 @@ android {
         versionName = "1.0"
 
         buildConfigField("String", "BASE_URL", "\"${project.properties["BASE_URL"]}\"")
+        buildConfigField("String", "USE_DUMMY_RESPONSE", "\"${project.properties["USE_DUMMY_RESPONSE"]}\"")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

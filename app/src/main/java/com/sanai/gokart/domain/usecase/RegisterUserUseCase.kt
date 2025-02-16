@@ -1,7 +1,7 @@
 package com.sanai.gokart.domain.usecase
 
 import com.sanai.gokart.data.models.request.RegisterRequest
-import com.sanai.gokart.data.models.response.RegisterResponse
+import com.sanai.gokart.data.models.response.register.RegisterResponse
 import com.sanai.gokart.data.util.Resource
 import com.sanai.gokart.domain.repository.LoginRepository
 import javax.inject.Inject

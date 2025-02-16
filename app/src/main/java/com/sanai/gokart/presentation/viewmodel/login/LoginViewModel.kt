@@ -52,6 +52,8 @@ class LoginViewModel(private val loginUserUseCase: LoginUserUseCase) : ViewModel
         try {
             viewModelScope.launch(Dispatchers.IO) {
                 val result = loginUserUseCase.execute(loginRequest)
+                val userProfile = result.data?.userInfo
+                Logger.d("LoginViewModel: User profile: $userProfile")
             }
         } catch (e: Exception) {
             Logger.e(e.message.toString())

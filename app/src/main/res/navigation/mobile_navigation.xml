@@ -7,19 +7,31 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.sanai.gokart.presentation.activities.home.ui.home.HomeFragment"
+        android:name="com.sanai.gokart.presentation.fragments.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.sanai.gokart.presentation.activities.home.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_account"
+        android:name="com.sanai.gokart.presentation.fragments.account.AccountFragment"
+        android:label="@string/title_account"
+        tools:layout="@layout/fragment_account" />
+
+    <fragment
+        android:id="@+id/navigation_cart"
+        android:name="com.sanai.gokart.presentation.fragments.cart.CartFragment"
+        android:label="@string/title_cart"
+        tools:layout="@layout/fragment_cart" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.sanai.gokart.presentation.activities.home.ui.notifications.NotificationsFragment"
+        android:name="com.sanai.gokart.presentation.fragments.notification.NotificationFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_more"
+        android:name="com.sanai.gokart.presentation.fragments.more.MoreFragment"
+        android:label="@string/title_more"
+        tools:layout="@layout/fragment_more" />
 </navigation>

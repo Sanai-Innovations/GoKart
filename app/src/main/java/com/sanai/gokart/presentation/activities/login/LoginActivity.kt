@@ -17,7 +17,7 @@ import com.google.android.material.textview.MaterialTextView
 import com.sanai.gokart.R
 import com.sanai.gokart.databinding.ActivityLoginBinding
 import com.sanai.gokart.presentation.activities.base.BaseActivity
-import com.sanai.gokart.presentation.activities.home.HomeActivity
+import com.sanai.gokart.presentation.activities.dashboard.DashboardActivity
 import com.sanai.gokart.presentation.activities.register.RegisterActivity
 import com.sanai.gokart.presentation.viewmodel.login.LoginViewModel
 import com.sanai.gokart.presentation.viewmodel.login.LoginViewModelFactory
@@ -100,7 +100,7 @@ class LoginActivity : BaseActivity() {
             viewModel.login(
                 userNameEditText.text.toString(), passwordNameEditText.text.toString()
             )
-            startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
+            startActivity(Intent(this@LoginActivity, DashboardActivity::class.java))
         }
 
         registerTextView.setOnClickListener {
