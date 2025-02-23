@@ -3,7 +3,7 @@ package com.sanai.gokart.presentation.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.sanai.gokart.databinding.PageLayoutBinding
+import com.sanai.gokart.databinding.EducationPagerLayoutBinding
 
 class EducationViewPagerAdapter :
     RecyclerView.Adapter<EducationViewPagerAdapter.EducationViewHolder>() {
@@ -17,7 +17,7 @@ class EducationViewPagerAdapter :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EducationViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val binding = PageLayoutBinding.inflate(layoutInflater, parent, false)
+        val binding = EducationPagerLayoutBinding.inflate(layoutInflater, parent, false)
         return EducationViewHolder(binding)
     }
 
@@ -27,7 +27,7 @@ class EducationViewPagerAdapter :
         holder.bind(listItem[position])
     }
 
-    inner class EducationViewHolder(binding: PageLayoutBinding) :
+    inner class EducationViewHolder(binding: EducationPagerLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
         private val pagerText = binding.pagerText
 

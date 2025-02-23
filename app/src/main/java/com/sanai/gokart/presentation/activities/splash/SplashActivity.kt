@@ -8,7 +8,7 @@ import android.os.Looper
 import com.sanai.gokart.databinding.ActivitySplashBinding
 import com.sanai.gokart.presentation.activities.base.BaseActivity
 import com.sanai.gokart.presentation.activities.education.EducationActivity
-import com.sanai.gokart.presentation.activities.dashboard.DashboardActivity
+import com.sanai.gokart.presentation.activities.dashboard.HomeActivity
 import com.sanai.gokart.presentation.util.prefs.AppPreferences
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -38,7 +38,7 @@ class SplashActivity : BaseActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
 
             if (preferences.isUserLoggedIn()) {
-                startActivity(Intent(this@SplashActivity, DashboardActivity::class.java))
+                startActivity(Intent(this@SplashActivity, HomeActivity::class.java))
             } else {
                 startActivity(Intent(this@SplashActivity, EducationActivity::class.java))
             }

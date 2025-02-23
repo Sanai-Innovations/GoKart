@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 import com.sanai.gokart.data.models.Product
 
 data class DashboardResponse(
-    @SerializedName("id")
+    @SerializedName("banners")
     var banners: List<Banner>?,
 
     @SerializedName("deals")

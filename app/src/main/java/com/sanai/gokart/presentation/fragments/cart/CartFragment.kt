@@ -9,7 +9,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.sanai.gokart.databinding.FragmentCartBinding
-import com.sanai.gokart.databinding.FragmentHomeBinding
 
 class CartFragment : Fragment() {
     private val binding get() = _binding!!

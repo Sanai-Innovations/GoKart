@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.sanai.gokart.databinding.FragmentHomeBinding
 import com.sanai.gokart.databinding.FragmentMoreBinding
 
 class MoreFragment : Fragment() {

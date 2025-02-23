@@ -16,9 +16,10 @@ import com.sanai.gokart.presentation.viewmodel.dashboard.DashboardViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class DashboardActivity : BaseActivity() {
+class HomeActivity : BaseActivity() {
 
-    private lateinit var viewModel: DashboardViewModel
+    lateinit var viewModel: DashboardViewModel
+
     private lateinit var binding: ActivityDashboardBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
