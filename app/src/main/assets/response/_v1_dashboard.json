@@ -1,0 +1,207 @@
+{
+  "banners": [
+    {
+      "id": 1,
+      "url": "https://images-eu.ssl-images-amazon.com/images/I/41kZhC-EkeL._SX300_SY300_QL70_FMwebp_.jpg",
+      "discount": "30% OFF",
+      "title": "On Headphones",
+      "subtitle": "Exclusive Sales",
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "url": "https://images-eu.ssl-images-amazon.com/images/I/41kZhC-EkeL._SX300_SY300_QL70_FMwebp_.jpg",
+      "discount": "30% OFF",
+      "title": "On Headphones",
+      "subtitle": "Exclusive Sales",
+      "categoryId": 2
+    },
+    {
+      "id": 3,
+      "url": "https://images-eu.ssl-images-amazon.com/images/I/41kZhC-EkeL._SX300_SY300_QL70_FMwebp_.jpg",
+      "discount": "30% OFF",
+      "title": "On Headphones",
+      "subtitle": "Exclusive Sales",
+      "categoryId": 3
+    },
+    {
+      "id": 4,
+      "url": "https://images-eu.ssl-images-amazon.com/images/I/41kZhC-EkeL._SX300_SY300_QL70_FMwebp_.jpg",
+      "discount": "30% OFF",
+      "title": "On Headphones",
+      "subtitle": "Exclusive Sales",
+      "categoryId": 4
+    },
+    {
+      "id": 5,
+      "url": "https://images-eu.ssl-images-amazon.com/images/I/41kZhC-EkeL._SX300_SY300_QL70_FMwebp_.jpg",
+      "discount": "30% OFF",
+      "title": "On Headphones",
+      "subtitle": "Exclusive Sales",
+      "categoryId": 5
+    }
+  ],
+  "deals": [
+    {
+      "productId": 1,
+      "title": "Apple iPhone 13 Mini",
+      "shortDesc": "Apple iPhone 13 Mini 128 GB, Midnight (Black)",
+      "categoryId": 1,
+      "subCategoryId": 1,
+      "isWishListed": false,
+      "quantity": 10,
+      "price": 25000,
+      "discount": 20,
+      "createdDate": "2021-11-11",
+      "lastUpdated": "2021-11-11",
+      "thumbnailUrl": "https://images-eu.ssl-images-amazon.com/images/I/31GEfQ0aszL._SY445_SX342_QL70_FMwebp_.jpg"
+    },
+    {
+      "productId": 2,
+      "title": "Oppo A53s",
+      "shortDesc": "Oppo A53s 5G 128 GB, 8 GB RAM, Ink Black, Smart Phone",
+      "categoryId": 1,
+      "subCategoryId": 1,
+      "quantity": 10,
+      "price": 25000,
+      "discount": 20,
+      "createdDate": "2021-11-11",
+      "lastUpdated": "2021-11-11",
+      "thumbnailUrl": "https://images-eu.ssl-images-amazon.com/images/I/41kZhC-EkeL._SX300_SY300_QL70_FMwebp_.jpg"
+    },
+    {
+      "productId": 3,
+      "title": "Samsung Galaxy S10",
+      "shortDesc": "Samsung Galaxy S10 Smart Phone 512 GB, 8 GB RAM, Prism White",
+      "categoryId": 1,
+      "subCategoryId": 1,
+      "quantity": 10,
+      "price": 25000,
+      "discount": 20,
+      "createdDate": "2021-11-11",
+      "lastUpdated": "2021-11-11",
+      "thumbnailUrl": "https://images-eu.ssl-images-amazon.com/images/I/71b5BwTCcZL._AC_UY327_FMwebp_QL65_.jpg"
+    },
+    {
+      "productId": 4,
+      "title": "Samsung Galaxy S10",
+      "shortDesc": "Samsung Galaxy S10 Smart Phone 512 GB, 8 GB RAM, Prism White",
+      "categoryId": 1,
+      "subCategoryId": 1,
+      "quantity": 10,
+      "price": 25000,
+      "discount": 20,
+      "createdDate": "2021-11-11",
+      "lastUpdated": "2021-11-11",
+      "thumbnailUrl": "https://images-eu.ssl-images-amazon.com/images/I/71b5BwTCcZL._AC_UY327_FMwebp_QL65_.jpg"
+    }
+  ],
+  "bestSelling": [
+    {
+      "productId": 1,
+      "title": "Apple iPhone 13 Mini",
+      "shortDesc": "Apple iPhone 13 Mini 128 GB, Midnight (Black)",
+      "categoryId": 1,
+      "subCategoryId": 1,
+      "quantity": 10,
+      "price": 25000,
+      "discount": 20,
+      "createdDate": "2021-11-11",
+      "lastUpdated": "2021-11-11",
+      "thumbnailUrl": "https://images-eu.ssl-images-amazon.com/images/I/31GEfQ0aszL._SY445_SX342_QL70_FMwebp_.jpg"
+    },
+    {
+      "productId": 2,
+      "title": "Oppo A53s",
+      "shortDesc": "Oppo A53s 5G 128 GB, 8 GB RAM, Ink Black, Smart Phone",
+      "categoryId": 1,
+      "subCategoryId": 1,
+      "quantity": 10,
+      "price": 25000,
+      "discount": 20,
+      "createdDate": "2021-11-11",
+      "lastUpdated": "2021-11-11",
+      "thumbnailUrl": "https://images-eu.ssl-images-amazon.com/images/I/41kZhC-EkeL._SX300_SY300_QL70_FMwebp_.jpg"
+    },
+    {
+      "productId": 3,
+      "title": "Samsung Galaxy S10",
+      "shortDesc": "Samsung Galaxy S10 Smart Phone 512 GB, 8 GB RAM, Prism White",
+      "categoryId": 1,
+      "subCategoryId": 1,
+      "quantity": 10,
+      "price": 25000,
+      "discount": 20,
+      "createdDate": "2021-11-11",
+      "lastUpdated": "2021-11-11",
+      "thumbnailUrl": "https://images-eu.ssl-images-amazon.com/images/I/71b5BwTCcZL._AC_UY327_FMwebp_QL65_.jpg"
+    },
+    {
+      "productId": 4,
+      "title": "Samsung Galaxy S10",
+      "shortDesc": "Samsung Galaxy S10 Smart Phone 512 GB, 8 GB RAM, Prism White",
+      "categoryId": 1,
+      "subCategoryId": 1,
+      "quantity": 10,
+      "price": 25000,
+      "discount": 20,
+      "createdDate": "2021-11-11",
+      "lastUpdated": "2021-11-11",
+      "thumbnailUrl": "https://images-eu.ssl-images-amazon.com/images/I/71b5BwTCcZL._AC_UY327_FMwebp_QL65_.jpg"
+    }
+  ],
+  "newCollection": [
+    {
+      "productId": 1,
+      "title": "Apple iPhone 13 Mini",
+      "shortDesc": "Apple iPhone 13 Mini 128 GB, Midnight (Black)",
+      "categoryId": 1,
+      "subCategoryId": 1,
+      "quantity": 10,
+      "price": 25000,
+      "discount": 20,
+      "createdDate": "2021-11-11",
+      "lastUpdated": "2021-11-11",
+      "thumbnailUrl": "https://images-eu.ssl-images-amazon.com/images/I/31GEfQ0aszL._SY445_SX342_QL70_FMwebp_.jpg"
+    },
+    {
+      "productId": 2,
+      "title": "Oppo A53s",
+      "shortDesc": "Oppo A53s 5G 128 GB, 8 GB RAM, Ink Black, Smart Phone",
+      "categoryId": 1,
+      "subCategoryId": 1,
+      "quantity": 10,
+      "price": 25000,
+      "discount": 20,
+      "createdDate": "2021-11-11",
+      "lastUpdated": "2021-11-11",
+      "thumbnailUrl": "https://images-eu.ssl-images-amazon.com/images/I/41kZhC-EkeL._SX300_SY300_QL70_FMwebp_.jpg"
+    },
+    {
+      "productId": 3,
+      "title": "Samsung Galaxy S10",
+      "shortDesc": "Samsung Galaxy S10 Smart Phone 512 GB, 8 GB RAM, Prism White",
+      "categoryId": 1,
+      "subCategoryId": 1,
+      "quantity": 10,
+      "price": 25000,
+      "discount": 20,
+      "createdDate": "2021-11-11",
+      "lastUpdated": "2021-11-11",
+      "thumbnailUrl": "https://images-eu.ssl-images-amazon.com/images/I/71b5BwTCcZL._AC_UY327_FMwebp_QL65_.jpg"
+    },
+    {
+      "productId": 4,
+      "title": "Samsung Galaxy S10",
+      "shortDesc": "Samsung Galaxy S10 Smart Phone 512 GB, 8 GB RAM, Prism White",
+      "categoryId": 1,
+      "subCategoryId": 1,
+      "quantity": 10,
+      "price": 25000,
+      "discount": 20,
+      "createdDate": "2021-11-11",
+      "lastUpdated": "2021-11-11",
+      "thumbnailUrl": "https://images-eu.ssl-images-amazon.com/images/I/71b5BwTCcZL._AC_UY327_FMwebp_QL65_.jpg"
+    }
+  ]
+}

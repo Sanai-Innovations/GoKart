@@ -20,10 +20,8 @@ import com.sanai.gokart.presentation.activities.base.BaseActivity
 import com.sanai.gokart.presentation.activities.dashboard.DashboardActivity
 import com.sanai.gokart.presentation.activities.register.RegisterActivity
 import com.sanai.gokart.presentation.viewmodel.login.LoginViewModel
-import com.sanai.gokart.presentation.viewmodel.login.LoginViewModelFactory
 import com.vans.gokart.ui.login.LoggedInUserView
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class LoginActivity : BaseActivity() {
@@ -36,9 +34,6 @@ class LoginActivity : BaseActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var passwordNameEditText: EditText
     private lateinit var registerTextView: MaterialTextView
-
-    @Inject
-    lateinit var loginViewModelFactory: LoginViewModelFactory
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -91,7 +86,7 @@ class LoginActivity : BaseActivity() {
         loginAsGuestButton = binding.loginAsGust
 
         // view model
-        viewModel = ViewModelProvider.create(this, loginViewModelFactory)[LoginViewModel::class]
+        viewModel = ViewModelProvider.create(this)[LoginViewModel::class]
     }
 
     private fun setClickListeners() {

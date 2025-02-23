@@ -1,5 +1,6 @@
 package com.sanai.gokart.presentation.di.module
 
+import com.sanai.gokart.data.api.services.DashboardService
 import com.sanai.gokart.data.api.services.LoginService
 import dagger.Module
 import dagger.Provides
@@ -17,5 +18,11 @@ class ServiceModule {
     @Provides
     fun providesNewsService(retrofit: Retrofit): LoginService {
         return retrofit.create(LoginService::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun providesDashboardService(retrofit: Retrofit): DashboardService {
+        return retrofit.create(DashboardService::class.java)
     }
 }

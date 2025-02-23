@@ -1,6 +1,8 @@
 package com.sanai.gokart.presentation.di.module
 
+import com.sanai.gokart.domain.repository.DashboardRepository
 import com.sanai.gokart.domain.repository.LoginRepository
+import com.sanai.gokart.domain.usecase.DashboardUseCase
 import com.sanai.gokart.domain.usecase.LoginUserUseCase
 import com.sanai.gokart.domain.usecase.RegisterUserUseCase
 import dagger.Module
@@ -23,5 +25,11 @@ class UseCaseModule {
     @Provides
     fun provideRegisterUseCase(loginRepository: LoginRepository): RegisterUserUseCase {
         return RegisterUserUseCase(loginRepository)
+    }
+
+    @Singleton
+    @Provides
+    fun provideDashboardUseCase(dashboardRepository: DashboardRepository): DashboardUseCase {
+        return DashboardUseCase(dashboardRepository)
     }
 }

@@ -10,11 +10,15 @@ import com.sanai.gokart.data.models.request.LoginRequest
 import com.sanai.gokart.domain.usecase.LoginUserUseCase
 import com.sanai.gokart.presentation.activities.login.LoginResult
 import com.sanai.gokart.presentation.util.logging.Logger
-import com.vans.gokart.ui.login.LoginFormState
+import com.sanai.gokart.presentation.activities.login.LoginFormState
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class LoginViewModel(private val loginUserUseCase: LoginUserUseCase) : ViewModel() {
+@HiltViewModel
+class LoginViewModel @Inject constructor(private val loginUserUseCase: LoginUserUseCase) :
+    ViewModel() {
 
     private val _loginForm = MutableLiveData<LoginFormState>()
     val loginFormState: LiveData<LoginFormState> = _loginForm

@@ -1,17 +1,24 @@
 package com.sanai.gokart.presentation.activities.dashboard
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.sanai.gokart.R
+import com.sanai.gokart.data.util.Resource
 import com.sanai.gokart.databinding.ActivityDashboardBinding
+import com.sanai.gokart.presentation.activities.base.BaseActivity
+import com.sanai.gokart.presentation.util.logging.Logger
+import com.sanai.gokart.presentation.viewmodel.dashboard.DashboardViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-class DashboardActivity : AppCompatActivity() {
+@AndroidEntryPoint
+class DashboardActivity : BaseActivity() {
 
+    private lateinit var viewModel: DashboardViewModel
     private lateinit var binding: ActivityDashboardBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +27,32 @@ class DashboardActivity : AppCompatActivity() {
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        initVariables()
+        bindObservers()
+
+        // get data from server
+        viewModel.getDashboardData()
+    }
+
+    private fun bindObservers() {
+        viewModel.dashboardResponse.observe(this) {
+            when (it) {
+                is Resource.Error -> {
+                    Logger.e(it.message.toString())
+                }
+
+                is Resource.Loading -> {
+                    Logger.e("Loading")
+                }
+
+                is Resource.Success -> {
+                    Logger.e("Success $it")
+                }
+            }
+        }
+    }
+
+    private fun initVariables() {
         val toolbar: Toolbar = binding.toolbar
         val navView: BottomNavigationView = binding.navView
 
@@ -37,5 +70,8 @@ class DashboardActivity : AppCompatActivity() {
         )
         toolbar.setupWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        // get view model
+        viewModel = ViewModelProvider.create(this)[DashboardViewModel::class]
     }
 }

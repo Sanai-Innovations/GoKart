@@ -1,4 +1,4 @@
-package com.sanai.gokart.data.repository
+package com.sanai.gokart.data.repository.repositoryImpl
 
 import com.sanai.gokart.data.models.request.LoginRequest
 import com.sanai.gokart.data.models.request.RegisterRequest

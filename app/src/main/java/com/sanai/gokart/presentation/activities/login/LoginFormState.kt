@@ -1,4 +1,4 @@
-package com.vans.gokart.ui.login
+package com.sanai.gokart.presentation.activities.login
 
 /**
  * Data validation state of the login form.
