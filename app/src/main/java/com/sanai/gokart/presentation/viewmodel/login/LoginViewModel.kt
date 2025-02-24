@@ -9,7 +9,7 @@ import com.sanai.gokart.R
 import com.sanai.gokart.data.models.request.LoginRequest
 import com.sanai.gokart.domain.usecase.LoginUserUseCase
 import com.sanai.gokart.presentation.activities.login.LoginResult
-import com.sanai.gokart.presentation.util.logging.Logger
+import com.sanai.gokart.presentation.util.Logger
 import com.sanai.gokart.presentation.activities.login.LoginFormState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers

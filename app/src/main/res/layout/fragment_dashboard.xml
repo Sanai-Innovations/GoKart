@@ -40,7 +40,7 @@
         </RelativeLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/category_recycler_view"
+            android:id="@+id/category_rv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -55,10 +55,10 @@
             android:layout_marginTop="@dimen/dimen_16"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/category_recycler_view" />
+            app:layout_constraintTop_toBottomOf="@+id/category_rv" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/product_title"
+            android:id="@+id/deals_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_20"
@@ -68,12 +68,50 @@
             app:layout_constraintTop_toBottomOf="@+id/banner_view_pager" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/product_recycler_view"
+            android:id="@+id/deals_rv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_8"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/product_title" />
+            app:layout_constraintTop_toBottomOf="@+id/deals_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/best_selling_products_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:text="Best selling"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/deals_rv" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/best_selling_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/best_selling_products_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/popular_products_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:text="Popular Products"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/best_selling_rv" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/popular_products_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/popular_products_title" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

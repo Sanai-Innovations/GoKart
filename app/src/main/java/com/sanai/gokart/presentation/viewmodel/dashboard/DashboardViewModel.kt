@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.sanai.gokart.data.models.response.dashboard.DashboardResponse
 import com.sanai.gokart.data.util.Resource
 import com.sanai.gokart.domain.usecase.DashboardUseCase
-import com.sanai.gokart.presentation.util.logging.Logger
+import com.sanai.gokart.presentation.util.Logger
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

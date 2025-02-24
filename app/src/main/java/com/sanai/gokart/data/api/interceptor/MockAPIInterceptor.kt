@@ -5,7 +5,7 @@ package com.sanai.gokart.data.api.interceptor
 
 import android.text.TextUtils
 import com.sanai.gokart.BuildConfig
-import com.sanai.gokart.presentation.util.constants.Constants.EMPTY_STRING
+import com.sanai.gokart.presentation.util.Constants.EMPTY_STRING
 import okhttp3.Interceptor
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.Protocol

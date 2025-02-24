@@ -1,8 +1,7 @@
-package com.sanai.gokart.presentation.util.logging
+package com.sanai.gokart.presentation.util
 
 import android.util.Log
 import com.sanai.gokart.BuildConfig
-import com.sanai.gokart.presentation.util.constants.Constants
 
 object Logger {
     fun d(value: String) {

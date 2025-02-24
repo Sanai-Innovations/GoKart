@@ -6,7 +6,7 @@ import com.sanai.gokart.data.repository.repositoryImpl.DashboardRepositoryImpl
 import com.sanai.gokart.data.repository.repositoryImpl.LoginRepositoryImpl
 import com.sanai.gokart.domain.repository.DashboardRepository
 import com.sanai.gokart.domain.repository.LoginRepository
-import com.sanai.gokart.presentation.util.prefs.AppPreferences
+import com.sanai.gokart.presentation.util.AppPreferences
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

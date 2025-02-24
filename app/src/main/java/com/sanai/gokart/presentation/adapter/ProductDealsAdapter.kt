@@ -6,15 +6,14 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.bumptech.glide.Glide
 import com.sanai.gokart.data.models.Product
 import com.sanai.gokart.databinding.ItemDealProductBinding
+import com.sanai.gokart.presentation.util.loadImage
 import javax.inject.Inject
 
 class ProductDealsAdapter @Inject constructor() :
     RecyclerView.Adapter<ProductDealsAdapter.ProductDealsViewHolder>() {
 
-    private val productDeals = mutableListOf<Product>()
     private var onItemClickListener: ((Product) -> Unit)? = null
     private val diffUtil = object : DiffUtil.ItemCallback<Product>() {
         override fun areItemsTheSame(oldItem: Product, newItem: Product): Boolean {
@@ -28,8 +27,7 @@ class ProductDealsAdapter @Inject constructor() :
     private val asyncListDiffer = AsyncListDiffer(this, diffUtil)
 
     fun setList(list: List<Product>) {
-        productDeals.clear()
-        productDeals.addAll(list)
+        asyncListDiffer.submitList(list)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductDealsViewHolder {
@@ -57,9 +55,7 @@ class ProductDealsAdapter @Inject constructor() :
         fun bind(product: Product) {
             binding.title.text = product.title
             binding.amount.text = product.price
-            Glide.with(binding.productImage.context)
-                .load(product.productImages?.get(0))
-                .into(binding.productImage)
+            binding.productImage.loadImage(product.productImages?.get(0))
 
             binding.root.setOnClickListener {
                 onItemClickListener?.invoke(product)

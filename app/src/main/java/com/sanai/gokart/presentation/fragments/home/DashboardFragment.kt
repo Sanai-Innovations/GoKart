@@ -6,14 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.sanai.gokart.data.models.Product
+import com.sanai.gokart.data.models.response.dashboard.DashboardResponse
 import com.sanai.gokart.data.util.Resource
 import com.sanai.gokart.databinding.FragmentDashboardBinding
 import com.sanai.gokart.presentation.adapter.BannerViewPagerAdapter
 import com.sanai.gokart.presentation.adapter.ProductDealsAdapter
 import com.sanai.gokart.presentation.adapter.ProductListAdapter
-import com.sanai.gokart.presentation.util.logging.Logger
+import com.sanai.gokart.presentation.util.Logger
 import com.sanai.gokart.presentation.viewmodel.dashboard.DashboardViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -26,8 +29,10 @@ class DashboardFragment : Fragment() {
 
     private lateinit var bannerViewPager: ViewPager2
     private lateinit var viewModel: DashboardViewModel
-    private lateinit var productRecyclerView: RecyclerView
+    private lateinit var dealsRecyclerView: RecyclerView
+    private lateinit var productsRecyclerView: RecyclerView
     private lateinit var categoryRecyclerView: RecyclerView
+    private lateinit var bestSellingRecyclerView: RecyclerView
 
     @Inject
     lateinit var dealsAdapter: ProductDealsAdapter
@@ -52,6 +57,17 @@ class DashboardFragment : Fragment() {
         return binding.root
     }
 
+    private fun initializeVariables() {
+        dealsRecyclerView = binding.dealsRv
+        bannerViewPager = binding.bannerViewPager
+        categoryRecyclerView = binding.categoryRv
+        bestSellingRecyclerView = binding.bestSellingRv
+        productsRecyclerView = binding.popularProductsRv
+
+        // get viewModel
+        viewModel = ViewModelProvider(requireActivity())[DashboardViewModel::class.java]
+    }
+
     private fun bindObservers() {
         viewModel.dashboardResponse.observe(viewLifecycleOwner) {
             when (it) {
@@ -65,20 +81,39 @@ class DashboardFragment : Fragment() {
 
                 is Resource.Success -> {
                     Logger.e("DashboardFragment: Success ${it.data}")
-                    bannerViewPagerAdapter.setList(it.data?.banners!!)
-                    bannerViewPager.adapter = bannerViewPagerAdapter
+                    setBannerAdapter(it.data)
+                    setDealsRecyclerViewAdapter(it.data?.deals)
+                    setProductsRecyclerViewAdapter(it.data?.newCollection)
+                    setBestSellingRecyclerViewAdapter(it.data?.bestSelling)
                 }
             }
         }
     }
 
-    private fun initializeVariables() {
-        bannerViewPager = binding.bannerViewPager
-        productRecyclerView = binding.productRecyclerView
-        categoryRecyclerView = binding.categoryRecyclerView
+    private fun setBestSellingRecyclerViewAdapter(bestSelling: List<Product>?) {
+        val adapter = ProductDealsAdapter()
+        adapter.setList(bestSelling!!)
+        binding.bestSellingRv.layoutManager = GridLayoutManager(requireActivity(), 2)
+        binding.bestSellingRv.adapter = adapter
+    }
 
-        // get viewModel
-        viewModel = ViewModelProvider(requireActivity())[DashboardViewModel::class.java]
+    private fun setProductsRecyclerViewAdapter(newCollection: List<Product>?) {
+        val adapter = ProductDealsAdapter()
+        adapter.setList(newCollection!!)
+        binding.popularProductsRv.layoutManager = GridLayoutManager(requireActivity(), 2)
+        binding.popularProductsRv.adapter = adapter
+    }
+
+    private fun setDealsRecyclerViewAdapter(deals: List<Product>?) {
+        val adapter = ProductDealsAdapter()
+        adapter.setList(deals!!)
+        binding.dealsRv.layoutManager = GridLayoutManager(requireActivity(), 2)
+        binding.dealsRv.adapter = adapter
+    }
+
+    private fun setBannerAdapter(data: DashboardResponse?) {
+        bannerViewPagerAdapter.setList(data?.banners!!)
+        bannerViewPager.adapter = bannerViewPagerAdapter
     }
 
     override fun onDestroyView() {

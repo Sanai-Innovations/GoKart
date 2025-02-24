@@ -11,7 +11,7 @@ import com.sanai.gokart.R
 import com.sanai.gokart.data.util.Resource
 import com.sanai.gokart.databinding.ActivityDashboardBinding
 import com.sanai.gokart.presentation.activities.base.BaseActivity
-import com.sanai.gokart.presentation.util.logging.Logger
+import com.sanai.gokart.presentation.util.Logger
 import com.sanai.gokart.presentation.viewmodel.dashboard.DashboardViewModel
 import dagger.hilt.android.AndroidEntryPoint
 

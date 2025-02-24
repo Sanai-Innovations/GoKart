@@ -7,8 +7,8 @@ import com.sanai.gokart.data.models.response.register.RegisterResponse
 import com.sanai.gokart.data.repository.datasource.LoginRemoteDataSource
 import com.sanai.gokart.data.util.Resource
 import com.sanai.gokart.domain.repository.LoginRepository
-import com.sanai.gokart.presentation.util.prefs.AppPreferences
-import com.sanai.gokart.presentation.util.logging.Logger
+import com.sanai.gokart.presentation.util.AppPreferences
+import com.sanai.gokart.presentation.util.Logger
 import retrofit2.HttpException
 import retrofit2.Response
 import java.net.ConnectException

@@ -2,8 +2,8 @@ package com.sanai.gokart.data.api.interceptor
 
 import android.app.Application
 import android.text.TextUtils
-import com.sanai.gokart.presentation.util.constants.Constants.EMPTY_STRING
-import com.sanai.gokart.presentation.util.logging.Logger
+import com.sanai.gokart.presentation.util.Constants.EMPTY_STRING
+import com.sanai.gokart.presentation.util.Logger
 import java.io.IOException
 import java.io.UnsupportedEncodingException
 import javax.inject.Inject
