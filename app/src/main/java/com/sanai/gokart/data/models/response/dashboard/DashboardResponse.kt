@@ -14,5 +14,5 @@ data class DashboardResponse(
     var bestSelling: List<Product>?,
 
     @SerializedName("newCollection")
-    val newCollection: List<Product>?,
+    val newCollection: List<Product>?
 )

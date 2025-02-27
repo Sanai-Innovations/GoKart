@@ -14,7 +14,6 @@ import javax.inject.Inject
 class ProductListAdapter @Inject constructor() :
     RecyclerView.Adapter<ProductListAdapter.ProductListViewHolder>() {
 
-    private val productDeals = mutableListOf<Product>()
     private var onItemClickListener: ((Product) -> Unit)? = null
     private val diffUtil = object : DiffUtil.ItemCallback<Product>() {
         override fun areItemsTheSame(oldItem: Product, newItem: Product): Boolean {
@@ -28,8 +27,7 @@ class ProductListAdapter @Inject constructor() :
     private val asyncListDiffer = AsyncListDiffer(this, diffUtil)
 
     fun setList(list: List<Product>) {
-        productDeals.clear()
-        productDeals.addAll(list)
+        asyncListDiffer.submitList(list)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductListViewHolder {

@@ -1,5 +1,6 @@
 package com.sanai.gokart.presentation.fragments.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import com.sanai.gokart.data.models.Product
 import com.sanai.gokart.data.models.response.dashboard.DashboardResponse
 import com.sanai.gokart.data.util.Resource
 import com.sanai.gokart.databinding.FragmentDashboardBinding
+import com.sanai.gokart.presentation.activities.product_detail.ProductDetailActivity
 import com.sanai.gokart.presentation.adapter.BannerViewPagerAdapter
 import com.sanai.gokart.presentation.adapter.ProductDealsAdapter
 import com.sanai.gokart.presentation.adapter.ProductListAdapter
@@ -91,24 +93,26 @@ class DashboardFragment : Fragment() {
     }
 
     private fun setBestSellingRecyclerViewAdapter(bestSelling: List<Product>?) {
-        val adapter = ProductDealsAdapter()
-        adapter.setList(bestSelling!!)
+        bestSellingAdapter.setList(bestSelling!!)
         binding.bestSellingRv.layoutManager = GridLayoutManager(requireActivity(), 2)
-        binding.bestSellingRv.adapter = adapter
+        binding.bestSellingRv.adapter = bestSellingAdapter
+        bestSellingAdapter.setOnItemClickListener {
+            startActivity(Intent(requireActivity(), ProductDetailActivity::class.java).apply {
+                putExtra("productId", it.productId)
+            })
+        }
     }
 
     private fun setProductsRecyclerViewAdapter(newCollection: List<Product>?) {
-        val adapter = ProductDealsAdapter()
-        adapter.setList(newCollection!!)
+        newCollectionAdapter.setList(newCollection!!)
         binding.popularProductsRv.layoutManager = GridLayoutManager(requireActivity(), 2)
-        binding.popularProductsRv.adapter = adapter
+        binding.popularProductsRv.adapter = newCollectionAdapter
     }
 
     private fun setDealsRecyclerViewAdapter(deals: List<Product>?) {
-        val adapter = ProductDealsAdapter()
-        adapter.setList(deals!!)
+        dealsAdapter.setList(deals!!)
         binding.dealsRv.layoutManager = GridLayoutManager(requireActivity(), 2)
-        binding.dealsRv.adapter = adapter
+        binding.dealsRv.adapter = dealsAdapter
     }
 
     private fun setBannerAdapter(data: DashboardResponse?) {

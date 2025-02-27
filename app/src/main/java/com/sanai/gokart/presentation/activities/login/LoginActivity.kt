@@ -20,7 +20,6 @@ import com.sanai.gokart.presentation.activities.base.BaseActivity
 import com.sanai.gokart.presentation.activities.dashboard.HomeActivity
 import com.sanai.gokart.presentation.activities.register.RegisterActivity
 import com.sanai.gokart.presentation.viewmodel.login.LoginViewModel
-import com.vans.gokart.ui.login.LoggedInUserView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

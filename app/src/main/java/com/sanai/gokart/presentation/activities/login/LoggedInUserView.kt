@@ -1,4 +1,4 @@
-package com.vans.gokart.ui.login
+package com.sanai.gokart.presentation.activities.login
 
 /**
  * User details post authentication that is exposed to the UI
