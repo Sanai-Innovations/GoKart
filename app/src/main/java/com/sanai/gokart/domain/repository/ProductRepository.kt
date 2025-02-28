@@ -8,4 +8,8 @@ interface ProductRepository {
     suspend fun addProductToWishList(productId: Int): Resource<Boolean>
     suspend fun removeProductFromWishList(productId: Int): Resource<Boolean>
     suspend fun getProductDetail(productId: Int): Resource<ProductDetailResponse>
+
+    // cart
+    suspend fun addProductToCart(productId: Int): Resource<Boolean>
+    suspend fun removeProductFromCart(productId: Int): Resource<Boolean>
 }

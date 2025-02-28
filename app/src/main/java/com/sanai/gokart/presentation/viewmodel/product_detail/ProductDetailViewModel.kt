@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.sanai.gokart.data.models.response.product_detail.ProductDetailResponse
 import com.sanai.gokart.data.util.Resource
+import com.sanai.gokart.domain.usecase.product.AddToCartUseCase
 import com.sanai.gokart.domain.usecase.product.AddToWishlistUseCase
 import com.sanai.gokart.domain.usecase.product.GetProductDetailUseCase
 import com.sanai.gokart.domain.usecase.product.RemoveFromWishlistUseCase
@@ -17,6 +18,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ProductDetailViewModel @Inject constructor(
+    private val addToCartUseCase: AddToCartUseCase,
     private val addToWishListUseCase: AddToWishlistUseCase,
     private val getProductDetailUseCase: GetProductDetailUseCase,
     private val removeFromWishlistUseCase: RemoveFromWishlistUseCase
@@ -29,6 +31,9 @@ class ProductDetailViewModel @Inject constructor(
 
     private val _removeToWishListResponse = MutableLiveData<Resource<Boolean>>()
     val removeToWishListResponse: LiveData<Resource<Boolean>> = _removeToWishListResponse
+
+    private val _addToCartResponse = MutableLiveData<Resource<Boolean>>()
+    val addToCartResponse: LiveData<Resource<Boolean>> = _addToCartResponse
 
     fun getProductDetails(productId: Int) {
         Logger.d("ProductDetailViewModel: Get product details data")
@@ -61,7 +66,7 @@ class ProductDetailViewModel @Inject constructor(
                 } else {
                     _addToWishListResponse.postValue(Resource.Error("No data found"))
                 }
-                Logger.d("ProductDetailViewModel: Add To Wishlist Response: $productDetailResponse")
+                Logger.d("ProductDetailViewModel: Add To Wishlist Response: $addToWishListUseCase")
             }
         } catch (e: Exception) {
             Logger.e(e.message.toString())
@@ -80,7 +85,26 @@ class ProductDetailViewModel @Inject constructor(
                 } else {
                     _addToWishListResponse.postValue(Resource.Error("No data found"))
                 }
-                Logger.d("ProductDetailViewModel: Remove From Wishlist Response: $productDetailResponse")
+                Logger.d("ProductDetailViewModel: Remove From Wishlist Response: $removeToWishListResponse")
+            }
+        } catch (e: Exception) {
+            Logger.e(e.message.toString())
+        }
+    }
+
+    fun addToCart(productId: Int) {
+        Logger.d("ProductDetailViewModel: Add to cart")
+        try {
+            viewModelScope.launch(Dispatchers.IO) {
+                _addToCartResponse.postValue(Resource.Loading())
+                val result = addToCartUseCase.execute(productId)
+                val addToCartResponse = result.data
+                if (addToCartResponse != null) {
+                    _addToCartResponse.postValue(Resource.Success(addToCartResponse))
+                } else {
+                    _addToCartResponse.postValue(Resource.Error("No data found"))
+                }
+                Logger.d("ProductDetailViewModel: Add to cart Response: $addToCartResponse")
             }
         } catch (e: Exception) {
             Logger.e(e.message.toString())

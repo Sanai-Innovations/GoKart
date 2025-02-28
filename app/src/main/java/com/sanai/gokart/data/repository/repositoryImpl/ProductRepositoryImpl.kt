@@ -16,6 +16,19 @@ class ProductRepositoryImpl(
         return safeApiCall { productRemoteDataSource.getProductDetails(productId) }
     }
 
+    override suspend fun addProductToCart(productId: Int): Resource<Boolean> {
+        return safeApiCall { productRemoteDataSource.addToCart(sharedPrefs.getUserId(), productId) }
+    }
+
+    override suspend fun removeProductFromCart(productId: Int): Resource<Boolean> {
+        return safeApiCall {
+            productRemoteDataSource.removeFromCart(
+                sharedPrefs.getUserId(),
+                productId
+            )
+        }
+    }
+
     override suspend fun addProductToWishList(productId: Int): Resource<Boolean> {
         return safeApiCall {
             productRemoteDataSource.addToWishList(

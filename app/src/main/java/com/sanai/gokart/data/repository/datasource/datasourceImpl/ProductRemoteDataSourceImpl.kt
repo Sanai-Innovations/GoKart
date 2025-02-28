@@ -19,4 +19,12 @@ class ProductRemoteDataSourceImpl(private val productService: ProductService) :
     override suspend fun removeFromWishList(userId: Int, productId: Int): Response<Boolean> {
         return productService.removeFromWishList(userId, productId)
     }
+
+    override suspend fun addToCart(userId: Int, productId: Int): Response<Boolean> {
+        return productService.addToCart(userId, productId)
+    }
+
+    override suspend fun removeFromCart(userId: Int, productId: Int): Response<Boolean> {
+        return productService.removeFromCart(userId, productId)
+    }
 }

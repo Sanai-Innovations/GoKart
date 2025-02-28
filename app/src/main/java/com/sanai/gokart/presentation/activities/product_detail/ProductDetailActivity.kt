@@ -24,9 +24,6 @@ class ProductDetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initializeVariables()
-        getIntentData()
-        viewModel.getProductDetails(productId)
-        bindObservers()
     }
 
     private fun initializeVariables() {
@@ -35,6 +32,20 @@ class ProductDetailActivity : AppCompatActivity() {
 
         // get view model
         viewModel = ViewModelProvider(this)[ProductDetailViewModel::class.java]
+
+        getIntentData()
+        viewModel.getProductDetails(productId)
+        bindObservers()
+        setClickListeners()
+    }
+
+    private fun setClickListeners() {
+        binding.btnAddToWishList.setOnClickListener {
+            viewModel.addToWishlist(productId)
+        }
+        binding.btnAddToCart.setOnClickListener {
+            viewModel.addToCart(productId)
+        }
     }
 
     private fun getIntentData() {

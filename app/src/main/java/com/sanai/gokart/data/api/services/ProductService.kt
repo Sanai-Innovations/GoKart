@@ -19,6 +19,18 @@ interface ProductService {
         @Query("productId") productId: Int
     ): Response<Boolean>
 
+    @GET("/v1/product/cart/add")
+    suspend fun addToCart(
+        @Query("userId") userId: Int,
+        @Query("productId") productId: Int
+    ): Response<Boolean>
+
+    @GET("/v1/product/cart/remove")
+    suspend fun removeFromCart(
+        @Query("userId") userId: Int,
+        @Query("productId") productId: Int
+    ): Response<Boolean>
+
     @GET("/v1/product/details")
     suspend fun getProductDetails(@Query("productId") productId: Int): Response<ProductDetailResponse>
 }

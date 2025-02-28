@@ -8,4 +8,8 @@ interface ProductRemoteDataSource {
     suspend fun addToWishList(userId: Int, productId: Int): Response<Boolean>
     suspend fun getProductDetails(productId: Int): Response<ProductDetailResponse>
     suspend fun removeFromWishList(userId: Int, productId: Int): Response<Boolean>
+
+    // cart
+    suspend fun addToCart(userId: Int, productId: Int): Response<Boolean>
+    suspend fun removeFromCart(userId: Int, productId: Int): Response<Boolean>
 }
