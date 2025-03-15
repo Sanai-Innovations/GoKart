@@ -1,4 +1,4 @@
-package com.sanai.gokart.data.repository.datasource
+package com.sanai.gokart.data.repository.datasource.product
 
 import com.sanai.gokart.data.models.response.product_detail.ProductDetailResponse
 import retrofit2.Response

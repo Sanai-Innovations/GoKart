@@ -1,8 +1,8 @@
-package com.sanai.gokart.data.repository.datasource.datasourceImpl
+package com.sanai.gokart.data.repository.datasource.datasourceImpl.product
 
 import com.sanai.gokart.data.api.services.ProductService
 import com.sanai.gokart.data.models.response.product_detail.ProductDetailResponse
-import com.sanai.gokart.data.repository.datasource.ProductRemoteDataSource
+import com.sanai.gokart.data.repository.datasource.product.ProductRemoteDataSource
 import retrofit2.Response
 
 class ProductRemoteDataSourceImpl(private val productService: ProductService) :

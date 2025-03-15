@@ -17,10 +17,14 @@ data class ProductDetailResponse(
     var productColours: List<ProductColour>? = null,
     @SerializedName("categoryId")
     var categoryId: Int = 1,
+    @SerializedName("categoryName")
+    var categoryName: String? = null,
     @SerializedName("quantity")
     var quantity: Int = 0,
-    @SerializedName("price")
-    var price: Double = 0.0,
+    @SerializedName("marketPrice")
+    var marketPrice: Double = 0.0,
+    @SerializedName("finalPrice")
+    var finalPrice: Double = 0.0,
     @SerializedName("isWishList")
     var isWishList: Boolean = false,
     @SerializedName("discount")

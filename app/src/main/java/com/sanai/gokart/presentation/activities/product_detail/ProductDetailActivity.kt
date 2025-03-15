@@ -1,8 +1,11 @@
 package com.sanai.gokart.presentation.activities.product_detail
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
+import com.sanai.gokart.data.models.response.product_detail.ProductDetailResponse
 import com.sanai.gokart.data.util.Resource
 import com.sanai.gokart.databinding.ActivityProductDetailBinding
 import com.sanai.gokart.presentation.util.Logger
@@ -16,6 +19,7 @@ class ProductDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProductDetailBinding
 
     private var productId: Int = 0
+    private var productDetailResponse: ProductDetailResponse? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,17 +60,32 @@ class ProductDetailActivity : AppCompatActivity() {
         viewModel.productDetailResponse.observe(this) {
             when (it) {
                 is Resource.Error -> {
-                    Logger.e("DashboardFragment: $it.message.toString()")
+                    Logger.e("ProductDetailActivity: $it.message.toString()")
                 }
 
                 is Resource.Loading -> {
-                    Logger.e("DashboardFragment: Loading")
+                    Logger.e("ProductDetailActivity: Loading")
                 }
 
                 is Resource.Success -> {
-                    Logger.e("DashboardFragment: Success ${it.data}")
+                    Logger.e("ProductDetailActivity: Success ${it.data}")
+                    productDetailResponse = it.data
+                    updateUI()
                 }
             }
         }
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun updateUI() {
+        binding.tvDiscount.text = "${productDetailResponse?.discount.toString()}% off"
+        binding.tvPrice.text = "Rs. ${productDetailResponse?.marketPrice.toString()}"
+        binding.tvSavePrice.text = "Save Rs. ${productDetailResponse?.finalPrice.toString()}"
+        binding.tvTitle.text = productDetailResponse?.title
+        binding.tvDescription.text = productDetailResponse?.description
+        binding.tvCategory.text = productDetailResponse?.categoryName
+        Glide.with(binding.imgProduct.context)
+            .load(productDetailResponse?.imageUrl)
+            .into(binding.imgProduct)
     }
 }

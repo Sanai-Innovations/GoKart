@@ -2,7 +2,8 @@ package com.sanai.gokart.presentation.di.module
 
 import com.sanai.gokart.data.repository.datasource.DashboardRemoteDataSource
 import com.sanai.gokart.data.repository.datasource.LoginRemoteDataSource
-import com.sanai.gokart.data.repository.datasource.ProductRemoteDataSource
+import com.sanai.gokart.data.repository.datasource.product.ProductLocalDataSource
+import com.sanai.gokart.data.repository.datasource.product.ProductRemoteDataSource
 import com.sanai.gokart.data.repository.repositoryImpl.DashboardRepositoryImpl
 import com.sanai.gokart.data.repository.repositoryImpl.LoginRepositoryImpl
 import com.sanai.gokart.data.repository.repositoryImpl.ProductRepositoryImpl
@@ -39,8 +40,13 @@ class RepositoryModule {
     @Provides
     fun providesProductRepository(
         appPreferences: AppPreferences,
+        productLocalDataSource: ProductLocalDataSource,
         productRemoteDataSource: ProductRemoteDataSource
     ): ProductRepository {
-        return ProductRepositoryImpl(appPreferences, productRemoteDataSource)
+        return ProductRepositoryImpl(
+            appPreferences,
+            productLocalDataSource,
+            productRemoteDataSource
+        )
     }
 }
