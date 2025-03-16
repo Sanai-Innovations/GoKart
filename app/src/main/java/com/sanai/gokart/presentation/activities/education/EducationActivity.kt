@@ -9,7 +9,7 @@ import com.sanai.gokart.databinding.ActivityEducationBinding
 import com.sanai.gokart.presentation.activities.base.BaseActivity
 import com.sanai.gokart.presentation.activities.login.LoginActivity
 import com.sanai.gokart.presentation.activities.register.RegisterActivity
-import com.sanai.gokart.presentation.adapter.EducationViewPagerAdapter
+import com.sanai.gokart.presentation.adapter.view_pager.EducationViewPagerAdapter
 
 class EducationActivity : BaseActivity(), View.OnClickListener {
 

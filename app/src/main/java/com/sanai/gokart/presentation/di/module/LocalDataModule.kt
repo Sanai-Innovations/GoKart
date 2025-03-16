@@ -1,5 +1,6 @@
 package com.sanai.gokart.presentation.di.module
 
+import com.sanai.gokart.data.db.dao.CartDAO
 import com.sanai.gokart.data.repository.datasource.datasourceImpl.product.ProductLocalDataSourceImpl
 import com.sanai.gokart.data.repository.datasource.product.ProductLocalDataSource
 import dagger.Module
@@ -14,8 +15,8 @@ class LocalDataModule {
 
     @Provides
     @Singleton
-    fun providesProductLocalDataSource(): ProductLocalDataSource {
-        return ProductLocalDataSourceImpl()
+    fun providesProductLocalDataSource(dao: CartDAO): ProductLocalDataSource {
+        return ProductLocalDataSourceImpl(dao)
     }
 }
 

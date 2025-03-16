@@ -7,6 +7,7 @@ import com.sanai.gokart.domain.usecase.DashboardUseCase
 import com.sanai.gokart.domain.usecase.LoginUserUseCase
 import com.sanai.gokart.domain.usecase.RegisterUserUseCase
 import com.sanai.gokart.domain.usecase.product.AddToWishlistUseCase
+import com.sanai.gokart.domain.usecase.product.GetCartItemsUseCase
 import com.sanai.gokart.domain.usecase.product.GetProductDetailUseCase
 import com.sanai.gokart.domain.usecase.product.RemoveFromWishlistUseCase
 import dagger.Module
@@ -53,5 +54,11 @@ class UseCaseModule {
     @Provides
     fun provideRemoveFromWishListUseCase(productRepository: ProductRepository): RemoveFromWishlistUseCase {
         return RemoveFromWishlistUseCase(productRepository)
+    }
+
+    @Singleton
+    @Provides
+    fun provideGetCartItemsUseCase(productRepository: ProductRepository): GetCartItemsUseCase {
+        return GetCartItemsUseCase(productRepository)
     }
 }

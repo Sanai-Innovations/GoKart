@@ -92,12 +92,12 @@ class ProductDetailViewModel @Inject constructor(
         }
     }
 
-    fun addToCart(productId: Int) {
+    fun addToCart(product: ProductDetailResponse) {
         Logger.d("ProductDetailViewModel: Add to cart")
         try {
             viewModelScope.launch(Dispatchers.IO) {
                 _addToCartResponse.postValue(Resource.Loading())
-                val result = addToCartUseCase.execute(productId)
+                val result = addToCartUseCase.execute(product)
                 val addToCartResponse = result.data
                 if (addToCartResponse != null) {
                     _addToCartResponse.postValue(Resource.Success(addToCartResponse))

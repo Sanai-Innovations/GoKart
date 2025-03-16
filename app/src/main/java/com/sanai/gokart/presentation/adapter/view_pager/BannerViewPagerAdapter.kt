@@ -1,4 +1,4 @@
-package com.sanai.gokart.presentation.adapter
+package com.sanai.gokart.presentation.adapter.view_pager
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -15,9 +15,9 @@ import com.sanai.gokart.data.models.response.dashboard.DashboardResponse
 import com.sanai.gokart.data.util.Resource
 import com.sanai.gokart.databinding.FragmentDashboardBinding
 import com.sanai.gokart.presentation.activities.product_detail.ProductDetailActivity
-import com.sanai.gokart.presentation.adapter.BannerViewPagerAdapter
-import com.sanai.gokart.presentation.adapter.ProductDealsAdapter
-import com.sanai.gokart.presentation.adapter.ProductListAdapter
+import com.sanai.gokart.presentation.adapter.view_pager.BannerViewPagerAdapter
+import com.sanai.gokart.presentation.adapter.recycler_view.ProductDealsAdapter
+import com.sanai.gokart.presentation.adapter.recycler_view.ProductListAdapter
 import com.sanai.gokart.presentation.util.Logger
 import com.sanai.gokart.presentation.viewmodel.dashboard.DashboardViewModel
 import dagger.hilt.android.AndroidEntryPoint

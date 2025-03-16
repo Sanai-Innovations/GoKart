@@ -48,7 +48,7 @@ class ProductDetailActivity : AppCompatActivity() {
             viewModel.addToWishlist(productId)
         }
         binding.btnAddToCart.setOnClickListener {
-            viewModel.addToCart(productId)
+            viewModel.addToCart(productDetailResponse!!)
         }
     }
 
