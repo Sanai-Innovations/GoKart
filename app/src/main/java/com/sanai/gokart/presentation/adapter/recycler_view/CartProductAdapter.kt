@@ -42,6 +42,7 @@ class CartProductAdapter @Inject constructor() :
     }
 
     override fun getItemCount(): Int {
+        Logger.d("CartProductAdapter: Number of products in cart ${asyncListDiffer.currentList.size}")
         return asyncListDiffer.currentList.size
     }
 
@@ -58,6 +59,7 @@ class CartProductAdapter @Inject constructor() :
         ViewHolder(binding.root) {
 
         fun bind(product: CartProductItem) {
+            Logger.d("CartProductAdapter: Creating view for $product")
             binding.title.text = product.title
             binding.subTitle.text = product.title
             binding.price.text = product.finalPrice.toString()

@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.sanai.gokart.data.models.response.cart.CartProductItem
 import com.sanai.gokart.data.util.Resource
 import com.sanai.gokart.databinding.FragmentCartBinding
 import com.sanai.gokart.presentation.adapter.recycler_view.CartProductAdapter
@@ -35,9 +36,6 @@ class CartFragment : Fragment() {
     private fun initializeVariables() {
         cartRecyclerView = binding.cartRecyclerView
         adapter = CartProductAdapter()
-        cartRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-        cartRecyclerView.setHasFixedSize(true)
-        cartRecyclerView.adapter = adapter
 
         // get viewModel
         viewModel = ViewModelProvider(requireActivity())[CartViewModel::class.java]
@@ -57,12 +55,16 @@ class CartFragment : Fragment() {
 
                 is Resource.Success -> {
                     Logger.e("CartFragment: Success ${resourceData.data}")
-                    resourceData.data.let {
-                        adapter.setList(it!!)
-                    }
+                    setRecyclerViewAdapter(resourceData.data!!)
                 }
             }
         }
+    }
+
+    private fun setRecyclerViewAdapter(newCollection: List<CartProductItem>) {
+        adapter.setList(newCollection)
+        binding.cartRecyclerView.layoutManager = LinearLayoutManager(requireActivity())
+        binding.cartRecyclerView.adapter = adapter
     }
 
     override fun onDestroyView() {
